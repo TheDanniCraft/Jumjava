@@ -25,7 +25,7 @@ A stylish Jump & Run made with Processing for Java.
 
 ## Features
 
-* -
+*Come back later for more details. This project is currently work in progress.*
 
 ## Tech Stack
 
@@ -33,39 +33,39 @@ A stylish Jump & Run made with Processing for Java.
 
 ## Screenshots
 
--
+*Come back later for more details. This project is currently work in progress.*
 
 ## Demo
 
--
+*Come back later for more details. This project is currently work in progress.*
 
 ## Documentation
 
--
+*Come back later for more details. This project is currently work in progress.*
 
 ## Installation
 
--
+*Come back later for more details. This project is currently work in progress.*
 
 ## Run Locally
 
--
+*Come back later for more details. This project is currently work in progress.*
 
 ## Deployment
 
--
+*Come back later for more details. This project is currently work in progress.*
 
 ## Roadmap
 
--
+*Come back later for more details. This project is currently work in progress.*
 
 ## Feedback
 
-If you have any feedback, please reach out to us at mail@thedannicraft.de
+If you have any feedback, please reach out to us at jumjava@thedannicraft.de
 
 ## Support
 
-For support, email mail@thedannicraft.de or join our Discord Server & DM TheDanniCraft#0202.
+For support, email jumjava@thedannicraft.de or join our [Discord Server](https://discord.gg/deutsch) & DM TheDanniCraft#0202.
 
 ## License
 
