@@ -16,6 +16,6 @@ class Platform{
   
   void display(){
     fill(0, 0, 255); 
-    rect(x, y, w, h);
+    rect(x, height - y, w, h);
   }
 }
