@@ -5,7 +5,7 @@ class Platform{
   
   Platform(float x, float y, float w, float h, String typ){
     this.x = x;
-    this.y = y;
+    this.y = height - y;
     this.w = w;
     this.h = h;
     this.typeof = typ;
@@ -16,6 +16,6 @@ class Platform{
   
   void display(){
     fill(0, 0, 255); 
-    rect(x, height - y, w, h);
+    rect(x, y, w, h);
   }
 }

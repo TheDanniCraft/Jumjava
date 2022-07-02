@@ -13,8 +13,8 @@ class Subject{
   String collisionSide;
   
   Subject(){
-    w = 80;
-    h =60;
+    w = 50;
+    h = 50;
     
     x = 100;
     y = 200;
@@ -126,7 +126,7 @@ class Subject{
   void  display(){
     fill(0, 255, 0, 128);
     
-    image(turtler, x, y);
+    image(player, x, y);
     if(vx >= 0){
     
     }
