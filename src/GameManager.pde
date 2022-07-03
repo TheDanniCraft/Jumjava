@@ -19,32 +19,39 @@ void setup() {
   println(path);
   subject = new Subject();
   pf = new Platform(300, 100, 200, 25, "safe");
-  surface.setTitle("Box Physic Simulation");
+  surface.setTitle("Jumjava");
 
-  bg = loadImage(path + "/res/img/spaceBG.jpg");
+  bg = loadImage(path + "/res/img/background.png");
   player = loadImage(path + "/res/img/cube.png");
 
   player.resize(subject.w, subject.h);
 }
 
 void draw() {
-    background(#5eb7ff);
+    background(#ff0000);
   
     image(bg, bgx, 0);
     image(bg, bgx+bg.width, 0);
+    image(bg, bgx-bg.width, 0);
     
-    if(right && !left){
-      bgx = bgx - 2;
-      pf.x = pf.x - 2;
+    if(subject.x <= 400){
+      bgx = bgx + 3;
+      subject.x = subject.x + 3;
+      pf.x = pf.x + 3;
     }
-  
-    if(!right && left && bgx < 0){
-      bgx = bgx + 2;
-      pf.x = pf.x + 2;
+    
+    if(subject.x >= width - 800){
+      bgx = bgx - 3;
+      subject.x = subject.x - 3;
+      pf.x = pf.x - 3;
     }
   
     if (bgx < -bg.width) {
       bgx = 0; // reset
+    }
+    
+    if(bgx > bg.width){
+      bgx = 0;
     }
   
     subject.collisionSide = rectangleCollision(subject, pf);

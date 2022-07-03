@@ -16,7 +16,7 @@ class Subject{
     w = 50;
     h = 50;
     
-    x = 100;
+    x = width / 2;
     y = 200;
     
     vx = 0;
