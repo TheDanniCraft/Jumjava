@@ -11,7 +11,7 @@ boolean left, right, space;
 boolean debug;
 
 void setup() {
-  String path = dataPath("").replace("\\src\\data","");
+  String path = dataPath("").replace("\\src\\data","").replace("/src/data","");
   fullScreen();
   left = false;
   right = false;
