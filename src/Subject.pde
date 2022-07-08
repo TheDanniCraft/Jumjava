@@ -43,7 +43,8 @@ class Subject{
     if(!right && !left) accelleration_x = 0;
     
     if(space && isOnGround){
-      vy = vy + jumpForce;  
+      vy = vy + jumpForce; 
+      jump.play();
       isOnGround = false;
     }
     
@@ -109,7 +110,7 @@ class Subject{
         isOnGround = true;
         vy = 0;
       } else {
-        vy *= bounce;
+        vy *= 0;
       }
     } else if (collisionSide == "top" && vy <= 0) {
       vy = 0;
