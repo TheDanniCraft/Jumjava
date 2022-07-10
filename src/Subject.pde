@@ -17,7 +17,7 @@ class Subject{
     h = 50;
     
     x = width / 2;
-    y = 200;
+    y = height / 2;
     
     vx = 0;
     vy = 0;
@@ -124,15 +124,18 @@ class Subject{
     }
   }
   
+  
   void  display(){
     fill(0, 255, 0, 128);
     
     image(player, x, y);
-    if(vx >= 0){
+    
+    // Load Player Skin in right direction
+    /*if(vx >= 0){
     
     }
     else{
-    
-    }
+      
+    }*/
   }
 }
