@@ -21,7 +21,6 @@ public Map generateLevel(int amount) { // type (1:easy, 2:medium, 3:hard, 0:endl
     } else {
       s = "end";
     }
-    println(s);
     level.put("platform-" + i, generatePlatform());
   }
   return level;

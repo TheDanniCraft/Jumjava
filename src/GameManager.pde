@@ -4,23 +4,29 @@ import processing.sound.*;
 Subject subject;
 Platform pf;
 
+int random = 0;
+int lastRandom;
 
-PImage bg;
+PImage bg, loading;
 int bgx = 0;
 PImage player;
 SoundFile jump;
+SoundFile bgmusic;
 
 boolean left, right, space;
 
-boolean debug, started;
+boolean debug, gameover;
 
 Map platforms = new HashMap();
-
 
 void setup() {
   String path = dataPath("").replace("\\src\\data","").replace("/src/data","");
   fullScreen();
   
+  loading = loadImage(path + "/res/img/loading.png");
+  loading.resize(width, height);
+  background(loading);
+    
   left = false;
   right = false;
   space = false;
@@ -32,22 +38,32 @@ void setup() {
   surface.setTitle("Jumjava");
   bg = loadImage(path + "/res/img/background.png");
   bg.resize(width, height);
-  
+  bgmusic = new SoundFile(this, path + "/res/audio/bgmusic-" + int(random(1,4)) +".mp3");
   jump = new SoundFile(this, path + "/res/audio/jump.mp3");
   player = loadImage(path + "/res/img/cube.png");
   player.resize(subject.w, subject.h);
   
-  platforms = generateLevel(10);
+  platforms = generateLevel(10000);
 }
 
 
-void draw() {
+void draw() {  
+  if(!bgmusic.isPlaying()){
+    lastRandom = random;
+    while (random == lastRandom) {
+      random = int(random(1,5));
+    }
+    String path = dataPath("").replace("\\src\\data","").replace("/src/data","");
+    bgmusic = new SoundFile(this, path + "/res/audio/bgmusic-" + random +".mp3");
+    bgmusic.play();
+  }
+  
   background(#000000);
   image(bg, bgx, 0);
   image(bg, bgx+bg.width, 0);
   image(bg, bgx-bg.width, 0);
   
-  if(subject.x <= 50){ // set to 400
+  if(subject.x <= 350){ // set to 400
     bgx = bgx + 3;
     subject.x = subject.x + 3;
     platforms.forEach((k, v) -> {
@@ -63,6 +79,10 @@ void draw() {
       Platform pf = (Platform)v;
       pf.x = pf.x - 3;
     });
+  }
+  
+  if(subject.y + subject.h >=height){
+    restart();
   }
   
   if (bgx < -bg.width) {
@@ -93,6 +113,13 @@ void draw() {
  }
 }
 
+void restart(){
+  bgmusic.stop();
+  clear();
+  loading.resize(width, height);
+  image(loading, 0, 0);
+  setup();
+}
 
 void keyPressed() {
   switch (keyCode) {
@@ -108,6 +135,9 @@ void keyPressed() {
     case 114:
       debug = !debug;
       break;
+   case 82:
+     restart();
+     break;
    }
 }
 

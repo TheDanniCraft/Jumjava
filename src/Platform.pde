@@ -15,7 +15,7 @@ class Platform{
   }
   
   void display(){
-    fill(0, 0, 255); 
+    fill(31, 31, 31); 
     rect(x, y, w, h);
   }
 }

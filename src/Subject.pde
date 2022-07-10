@@ -43,8 +43,8 @@ class Subject{
     if(!right && !left) accelleration_x = 0;
     
     if(space && isOnGround){
-      vy = vy + jumpForce; 
       jump.play();
+      vy = vy + jumpForce; 
       isOnGround = false;
     }
     
